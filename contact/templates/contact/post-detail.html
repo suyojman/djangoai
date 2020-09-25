@@ -1,0 +1,43 @@
+{% extends 'contact/base.html' %}
+{% block content %}
+<div class="container-fluid">
+<div class="row"></div>
+<br/>
+<div class="row">
+ <div class="col-md-1 col-xs-1 col-sm-1">
+    </div>
+ <div class="col-md-8 col-xs-8 col-sm-8">
+  <p class="h2">
+  First Name : {{contact.first_name}}
+  <br>
+  Last Name :  {{contact.last_name}}
+  <br>
+  Email Address : {{ contact.email_address }}
+  <br>
+  Phone : {{contact.phone}} 
+  </p>
+    </div>
+ <div class="col-md-1 col-xs-1 col-sm-1">
+  <a href="{% url 'edit' contact.pk %}">
+   <button type="button" class="btn btn-info">
+    <span class="glyphicon glyphicon-pencil"></span>
+   </button>
+  </a>
+ </div>
+ <div class="col-md-1 col-xs-1 col-sm-1">
+  <a href="{% url 'delete' contact.pk %}">
+   <button type="button" class="btn btn-danger">
+    <span class="glyphicon glyphicon-trash"></span>
+   </button>
+  </a>
+ </div>
+ <div class="col-md-1 col-xs-1 col-sm-1"></div>
+</div>
+<div class="row">
+ <div class="col-md-1 col-xs-1 col-sm-1"></div>
+ <div class="col-md-10 col-xs-10 col-sm-10">
+ </div>
+ <div class="col-md-1 col-xs-1 col-sm-1"></div>
+</div>
+</div>
+{% endblock %}

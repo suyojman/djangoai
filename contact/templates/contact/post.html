@@ -1,0 +1,48 @@
+{% extends 'contact/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>Please register for your Interestship program!!</p>
+                    </div>
+                    <div class="col-md-9 register-right">
+                   
+                        <div class="tab-content">
+                            <div class="tab-panel" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Registration Form</h3>
+                                <form action="{% url 'post' %}" method="post">
+                                {% csrf_token %}
+                                 
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        First Name :{{ form.first_name }}
+                                        <br>
+                                        <br>
+                                        Last Name :{{ form.last_name }}
+                                        <br>
+                                        <br>
+                                        Email Address :{{ form.email_address }}
+                                        <br>
+                                        <br>
+                                        Phone :{{ form.phone }}
+                                        <br>
+            
+                                     
+
+                                   <div class="form-group">
+                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+{% endblock content %}
